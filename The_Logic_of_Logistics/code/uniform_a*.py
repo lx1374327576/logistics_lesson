@@ -60,3 +60,4 @@ for k in range(T):
         print(k)
     # print(ans1, ans2)
 print(avg1, avg2)
+print(avg_three)
