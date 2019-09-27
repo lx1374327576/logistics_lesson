@@ -4,6 +4,7 @@ import copy
 # 箱子大小100 重复10000次求平均
 avg1 = 0
 avg2 = 0
+avg_three = 0
 v = 10000
 T = 10000
 L = 10000
@@ -34,21 +35,27 @@ for k in range(T):
     ans2 = 0
     i = 0
     j = L - 1
+    three = 0
     while i < j:
+        flag = 1
         tmp_v = a[i] + a[j]
         if tmp_v > v:
             j -= 1
             ans2 += 1
             continue
         while a[i+1] + tmp_v < v:
+            flag = 0
             tmp_v += a[i+1]
             i += 1
         ans2 += 1
         i += 1
         j -= 1
+        if flag == 0:
+            three += 1
     if i == j:
         ans2 += 1
     avg2 += ans2 / T
+    avg_three += three / T
     if k % 100 == 0:
         print(k)
     # print(ans1, ans2)
