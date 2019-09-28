@@ -1,0 +1,1 @@
+nash1.py maple替代算法解nash均衡
